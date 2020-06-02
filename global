@@ -1,0 +1,343 @@
+itemdeck_GUID = '6290da'
+fooddeck_GUID = 'efa45b'
+button1_GUID = '941425'
+button2_GUID = 'abf34c'
+water1_GUID = '4a975e'
+water2_GUID = '2e9ca4'
+spring_GUID = '2058dd'
+fall_GUID = 'febe6a'
+summer_GUID = 'db93b7'
+mountain_GUID = '82fb60'
+trash_GUID = '61e5f6'
+animal_GUID = 'fc1376'
+traverse_GUID = '68304e'
+LNT_GUID = '211afb'
+bluechecker_GUID = '070471'
+redchecker_GUID = '845dbd'
+greenchecker_GUID = '417caa'
+yellowchecker_GUID = '3dbe6c'
+bluepawn_GUID = '756232'
+greenpawn_GUID = '488b20'
+redpawn_GUID = '039947'
+yellowpawn_GUID = 'ecec3b'
+
+testbutton_GUID = '7b1e9e'
+
+test_GUID = '070471'
+
+
+button_parameters = {}
+button_parameters.click_function = 'restock'
+button_parameters.function_owner = self
+button_parameters.label = 'Restock'
+button_parameters.position = {0,0.15,0}
+button_parameters.rotation = {0,0,0}
+button_parameters.width = 600
+button_parameters.height = 300
+button_parameters.font_size = 170
+
+button_parameters2 = {}
+button_parameters2.click_function = 'startGame'
+button_parameters2.function_owner = self
+button_parameters2.label = 'Start Game'
+button_parameters2.position = {0,0.15,0}
+button_parameters2.rotation = {0,0,0}
+button_parameters2.width = 600
+button_parameters2.height = 400
+button_parameters2.font_size = 110
+
+button_parameters3 = {}
+button_parameters3.click_function = 'check'
+button_parameters3.function_owner = self
+button_parameters3.label = 'Test'
+button_parameters3.position = {0,0.1,0}
+button_parameters3.rotation = {0,0,0}
+button_parameters3.width = 600
+button_parameters3.height = 300
+button_parameters3.font_size = 100
+
+
+
+--item slots
+itemSlot1 = {-15.146968, 0.973605, -12.250891}
+itemSlot2 = {-9.33222, 0.973605, -12.2113802}
+--food slots
+foodSlot1 = {2.562124, 0.973605, -2.679055}
+foodSlot2 = {8.759628, 0.973605, -2.623601}
+--weather slot
+weatherSlot1 = {-7.862373, 0.973605, 21.735806}
+weatherSlot2 = {-2.458361, 0.973605, 21.735806}
+weatherSlot3 = {2.860144, 0.973605, 21.735806}
+weatherSlot4 = {8.25067, 0.973605, 21.735806}
+weatherSlot5 = {13.617081, 0.973605, 21.735806}
+
+--mountain slots
+mountainSlot1 = {-7.825091, 0.973605, 14.637702}
+mountainSlot2 = {-2.47907, 0.973605, 14.637702}
+mountainSlot3 = {2.902912, 0.973605, 14.637702}
+mountainSlot4 = {8.271088, 0.973605, 14.637702}
+mountainSlot5 = {13.633842, 0.973605, 14.637702}
+
+function onLoad()
+    itemcards = getObjectFromGUID(itemdeck_GUID)
+    foodcards = getObjectFromGUID(fooddeck_GUID)
+
+
+    water1 = getObjectFromGUID(water1_GUID)
+    water2 = getObjectFromGUID(water2_GUID)
+    spring = getObjectFromGUID(spring_GUID)
+    summer = getObjectFromGUID(summer_GUID)
+    fall = getObjectFromGUID(fall_GUID)
+    mountaincards = getObjectFromGUID(mountain_GUID)
+    animalcards = getObjectFromGUID(animal_GUID)
+    trashcards = getObjectFromGUID(trash_GUID)
+    traversecards = getObjectFromGUID(traverse_GUID)
+    LNTcard = getObjectFromGUID(LNT_GUID)
+
+    --Player Tokens
+    redchecker = getObjectFromGUID(redchecker_GUID)
+    bluechecker = getObjectFromGUID(bluechecker_GUID)
+    greenchecker = getObjectFromGUID(greenchecker_GUID)
+    yellowchecker = getObjectFromGUID(yellowchecker_GUID)
+    bluepawn = getObjectFromGUID(bluepawn_GUID)
+    greenpawn = getObjectFromGUID(greenpawn_GUID)
+    redpawn = getObjectFromGUID(redpawn_GUID)
+    yellowpawn = getObjectFromGUID(yellowpawn_GUID)
+
+--Buttons
+    button1 = getObjectFromGUID(button1_GUID)
+    button2 = getObjectFromGUID(button2_GUID)
+    testbutton = getObjectFromGUID(testbutton_GUID)
+
+    test = getObjectFromGUID(test_GUID)
+
+--Zone Catalog
+    store1one = getObjectFromGUID('07b060')
+    store1two = getObjectFromGUID('2abb77')
+    store2one = getObjectFromGUID('79ba1e')
+    store2two = getObjectFromGUID('2c46de')
+    store3one = getObjectFromGUID('2fdb94')
+    store3two = getObjectFromGUID('8b1ea1')
+    dumpster = getObjectFromGUID('f5ac33')
+    discard = getObjectFromGUID('2e2680')
+
+    foodstore1 = getObjectFromGUID('8e57df')
+    foodstore2 = getObjectFromGUID('5e2e44')
+
+    weather = getObjectFromGUID('9ce58f')
+    weatherZone1 = getObjectFromGUID('af23c0')
+    weatherZone2 = getObjectFromGUID('0e8a64')
+    weatherZone3 = getObjectFromGUID('9870ff')
+    weatherZone4 = getObjectFromGUID('6514c7')
+    weatherZone5 = getObjectFromGUID('ed13f7')
+    weatherDiscard = getObjectFromGUID('066d79')
+
+    mountain1 = getObjectFromGUID('ea4bad')
+    mountain2 = getObjectFromGUID('adf911')
+    mountain3 = getObjectFromGUID('970923')
+    mountain4 = getObjectFromGUID('e8690e')
+    mountain5 = getObjectFromGUID('14355c')
+
+    bluehand = getObjectFromGUID('d3d39c')
+    greenhand = getObjectFromGUID('8f3f6f')
+    redhand = getObjectFromGUID('672a59')
+    yellowhand = getObjectFromGUID('54c6c2')
+
+    store1onebuy = getObjectFromGUID('95e50b')
+    store1twobuy = getObjectFromGUID('296d76')
+--Game Set Up
+
+  itemcards.shuffle()
+  itemcards.setPosition({-21.05707, 0.973605, -12.257385})
+
+  --foodcards.shuffle()
+  foodcards.setPosition({-3.279371, 0.973605, -2.730322})
+  water1.setPosition({-15.200047, 0.973605, -2.657004})
+  water2.setPosition({-9.419097, 0.973605, -2.701405})
+  spring.setPosition({-32.301361,0.973605, 21.672129})
+  summer.setPosition({-26.712152, 0.973605, 21.672129})
+  fall.setPosition({-21.10257, 0.973605, 21.672129})
+  mountaincards.setPosition({-13.637524, 0.973605, 14.599265})
+  mountaincards.shuffle()
+  animalcards.setPosition({2.587337, 0.973605, 5.744501})
+  animalcards.shuffle()
+  trashcards.setPosition({-3.260079, 0.973605, 5.680976})
+  trashcards.shuffle()
+  traversecards.setPosition({8.741451, 0.973605, 5.762641})
+  --LNTcard.setPosition({14.347054, 0.973605, 5.698639})
+
+  Wait.frames(function() redchecker.setPosition({4.355564, 2, -24.314995}) end, 60)
+  Wait.frames(function() bluechecker.setPosition({-52.458912, 2, -24.397387}) end, 60)
+  Wait.frames(function() greenchecker.setPosition({-24.720367, 2, -24.342279}) end, 60)
+  Wait.frames(function() yellowchecker.setPosition({32.477917, 2, -24.347473}) end, 60)
+
+  button1.createButton(button_parameters)
+  button2.createButton(button_parameters2)
+
+  testbutton.createButton(button_parameters3)
+
+  fall.shuffle()
+  summer.shuffle()
+  spring.shuffle()
+
+end
+
+
+function startGame()
+  Wait.frames(function() fall.setPositionSmooth({-13.648992, 0.973605, 21.7155}) end, 1)
+  Wait.frames(function() summer.setPositionSmooth({-13.648992, 1.1, 21.7155}) end, 25)
+  Wait.frames(function() spring.setPositionSmooth({-13.648992, 1.5, 21.7155}) end, 50)
+
+  mountaincards.takeObject({position = mountainSlot1, rotation = {0,180,0}})
+  mountaincards.takeObject({position = mountainSlot2, rotation = {0,180,0}})
+  mountaincards.takeObject({position = mountainSlot3, rotation = {0,180,0}})
+  mountaincards.takeObject({position = mountainSlot4, rotation = {0,180,0}})
+  mountaincards.takeObject({position = mountainSlot5, rotation = {0,180,0}})
+
+  Wait.frames(function() weather.getObjects()[1].takeObject({position = weatherSlot1, top = true, rotation = {0,180,0}}) end, 120)
+  Wait.frames(function() weather.getObjects()[1].takeObject({position = weatherSlot2, top = true, rotation = {0,180,0}}) end, 120)
+  Wait.frames(function() weather.getObjects()[1].takeObject({position = weatherSlot3, top = true, rotation = {0,180,0}}) end, 120)
+  Wait.frames(function() weather.getObjects()[1].takeObject({position = weatherSlot4, top = true, rotation = {0,180,0}}) end, 120)
+  --Wait.frames(function() weather.getObjects()[1].takeObject({position = weatherSlot5, top = true, rotation = {0,180,0}}) end, 100)
+
+end
+
+function restock()
+  itemcards.takeObject({position = itemSlot1, rotation = {0,180,0}})
+  itemcards.takeObject({position = itemSlot2, rotation = {0,180,0}})
+
+  --Gear Stores
+    item1 = store1one.getObjects()[1]
+    if item1 ~= nil then
+    item1.setPositionSmooth(store2one.getPosition()) end
+
+    item2 = store1two.getObjects()[1]
+    if item2 ~= nil then
+      item2.setPositionSmooth(store2two.getPosition()) end
+
+    item3 = store2one.getObjects()[1]
+    if item3 ~= nil then
+        item3.setPositionSmooth(store3one.getPosition()) end
+
+    item4 = store2two.getObjects()[1]
+    if item4 ~= nil then
+      item4.setPositionSmooth(store3two.getPosition()) end
+
+    item5 = store3one.getObjects()[1]
+    if item5 ~= nil then
+      item5.setPositionSmooth(dumpster.getPosition()) end
+
+    item6 = store3two.getObjects()[1]
+    if item6 ~= nil then
+      item6.setPositionSmooth(dumpster.getPosition()) end
+
+    --Food Stores
+    objectsInZone1 = foodstore1.getObjects()
+    if #objectsInZone1 == 0 then
+      foodcards.takeObject({position = foodSlot1, rotation = {0,180,0}}) end
+
+    objectsInZone2 = foodstore2.getObjects()
+    if #objectsInZone2 == 0 then
+      foodcards.takeObject({position = foodSlot2, rotation = {0,180,0}}) end
+
+--Mountain Restock
+    mountaininfo1 = mountain1.getObjects()
+    if #mountaininfo1 == 0 then
+      mountaincards.takeObject({position = mountainSlot1, rotation = {0,180,0}}) end
+
+    mountaininfo2 = mountain2.getObjects()
+    if #mountaininfo2 == 0 then
+      mountaincards.takeObject({position = mountainSlot2, rotation = {0,180,0}}) end
+
+    mountaininfo3 = mountain3.getObjects()
+    if #mountaininfo3 == 0 then
+      mountaincards.takeObject({position = mountainSlot3, rotation = {0,180,0}}) end
+
+    mountaininfo4 = mountain4.getObjects()
+    if #mountaininfo4 == 0 then
+      mountaincards.takeObject({position = mountainSlot4, rotation = {0,180,0}}) end
+
+    mountaininfo5 = mountain5.getObjects()
+    if #mountaininfo5 == 0 then
+      mountaincards.takeObject({position = mountainSlot5, rotation = {0,180,0}}) end
+
+
+    --weather
+weather.getObjects()[1].takeObject({position = weatherSlot1, top = true, rotation = {0,180,0}})
+
+  weather1 = weatherZone1.getObjects()[1]
+  if weather1 ~= nil then
+    weather1.setPositionSmooth(weatherSlot2) end
+
+  weather2 = weatherZone2.getObjects()[1]
+  if weather2 ~= nil then
+    weather2.setPositionSmooth(weatherSlot3) end
+
+  weather3 = weatherZone3.getObjects()[1]
+  if weather3 ~= nil then
+    weather3.setPositionSmooth(weatherSlot4) end
+
+  weather4 = weatherZone4.getObjects()[1]
+  if weather4 ~= nil then
+    weather4.setPositionSmooth(weatherSlot5) end
+
+  weather5 = weatherZone5.getObjects()[1]
+  if weather5 ~= nil then
+    weather5.setPositionSmooth(weatherDiscard.getPosition()) end
+
+  --animalcards.shuffle()
+
+--Empting Dumpster
+ dumpsterInfo = dumpster.getObjects()
+
+ for k,obj in ipairs(dumpsterInfo) do
+     if obj.tag == 'Deck' then
+         dumpster_GUID = obj.getGUID() end
+--  print (dumpster_GUID)
+
+dumpsterdeck = getObjectFromGUID(dumpster_GUID)
+
+dumpstercount = dumpsterdeck.getObjects()
+  if #dumpstercount >= 10 then
+  dumpsterdeck.setPositionSmooth(discard.getPosition()) end
+  end
+end
+
+function check()
+
+
+result = test.getPosition()
+print (result)
+
+
+end
+
+--Player Action Scripts
+
+function onObjectEnterScriptingZone(zone, obj)
+  if zone == store1onebuy then
+    if obj == bluepawn then
+    item1 = store1one.getObjects()[1]
+    item1.setPosition(bluehand.getPosition())
+    else if obj == greenpawn then
+    item1 = store1one.getObjects()[1]
+    item1.setPosition(greenhand.getPosition())
+    else if obj == redpawn then
+    item1 = store1one.getObjects()[1]
+    item1.setPosition(redhand.getPosition())
+    else if obj == yellowpawn then
+    item1 = store1one.getObjects()[1]
+    item1.setPosition(yellowhand.getPosition())
+  if zone == store1twobuy then
+    if obj == bluepawn then
+    item2 = store1two.getObjects()[1]
+    item2.setPosition(bluehand.getPosition())
+              end
+            end
+          end
+        end
+      end
+    end
+  end
+end
+
